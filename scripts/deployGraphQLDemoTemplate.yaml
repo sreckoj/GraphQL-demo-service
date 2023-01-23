@@ -31,3 +31,15 @@ spec:
     - protocol: TCP
       port: 4000
       targetPort: 4000
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: graphql-demo-service
+spec:
+  to:
+    kind: Service
+    name: graphql-demo-service
+  port:
+    targetPort: 4000
+  wildcardPolicy: None
