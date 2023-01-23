@@ -1,0 +1,17 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: "build-graphql-demo-image"
+spec:
+  output:
+    to:
+      kind: "ImageStreamTag"
+      name: "graphqldemo:latest"
+  source:
+    git:
+      uri: "https://github.com/sreckoj/GraphQL-demo-service.git"
+    contextDir: "graphql-service"
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: dockerfile
