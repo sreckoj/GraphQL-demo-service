@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graphql-demo-service
+  labels:
+    app: graphql-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graphql-demo
+  template:
+    metadata:
+      labels:
+        app: graphql-demo
+    spec:
+      containers:
+      - name: graphql-demo
+        image: image-registry.openshift-image-registry.svc:5000/$namespace/graphqldemo:latest
+        ports:
+        - containerPort: 4000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: graphql-demo-service
+spec:
+  selector:
+    app: graphql-demo
+  ports:
+    - protocol: TCP
+      port: 4000
+      targetPort: 4000
