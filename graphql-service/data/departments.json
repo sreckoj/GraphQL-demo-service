@@ -1,0 +1,16 @@
+[
+  {"deptId": "A00", "departmentName": "SPIFFY COMPUTER SERVICE DIV."},
+  {"deptId": "B01", "departmentName": "PLANNING"                    },
+  {"deptId": "C01", "departmentName": "INFORMATION CENTER"          },
+  {"deptId": "D01", "departmentName": "DEVELOPMENT CENTER"          },
+  {"deptId": "D11", "departmentName": "MANUFACTURING SYSTEMS"       },
+  {"deptId": "D21", "departmentName": "ADMINISTRATION SYSTEMS"      },
+  {"deptId": "E01", "departmentName": "SUPPORT SERVICES"            },
+  {"deptId": "E11", "departmentName": "OPERATIONS"                  },
+  {"deptId": "E21", "departmentName": "SOFTWARE SUPPORT"            },
+  {"deptId": "F22", "departmentName": "BRANCH OFFICE F2"            },
+  {"deptId": "G22", "departmentName": "BRANCH OFFICE G2"            },
+  {"deptId": "H22", "departmentName": "BRANCH OFFICE H2"            },
+  {"deptId": "I22", "departmentName": "BRANCH OFFICE I2"            },
+  {"deptId": "J22", "departmentName": "BRANCH OFFICE J2"            }
+]

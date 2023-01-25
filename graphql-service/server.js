@@ -6,24 +6,31 @@ import { DataStore } from 'notarealdb';
 // Database
 // ----------------------------------------------
 const store = new DataStore('./data');
-const accounts = store.collection('accounts');
+const employees = store.collection('employees');
+const departments = store.collection('departments');
 
 // ----------------------------------------------
 // Schema definition
 // ----------------------------------------------
 const typeDefs = `#graphql
     type Query { 
-        accounts:[Account]
+        employees:[Employee]
+        departments:[Department]
     }
 
-    type Account {
+    type Employee {
         id:ID!
-        name:Name
+        firstName:String
+        lastName:String
+        deptId:String
+        hireDate:String
+        role:String
+        salary:Float
     }
 
-    type Name {
-        first:String
-        last:String
+    type Department {
+        deptId:ID!
+        departmentName:String
     }
 `;
 
@@ -32,7 +39,8 @@ const typeDefs = `#graphql
 // ----------------------------------------------
 const resolvers = {
     Query : {
-        accounts:() => accounts.list(),
+        employees:() => employees.list(),
+        departments:() => departments.list()
     }
 }
 
