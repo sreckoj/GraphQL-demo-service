@@ -22,14 +22,14 @@ const typeDefs = `#graphql
         id:ID!
         firstName:String
         lastName:String
-        deptId:String
         hireDate:String
         role:String
         salary:Float
+        department:Department
     }
 
     type Department {
-        deptId:ID!
+        id:ID!
         departmentName:String
     }
 `;
@@ -41,6 +41,11 @@ const resolvers = {
     Query : {
         employees:() => employees.list(),
         departments:() => departments.list()
+    },
+    Employee: {
+        department:(root) => {
+            return departments.get(root.deptId);
+        } 
     }
 }
 
